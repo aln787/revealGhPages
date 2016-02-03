@@ -62,6 +62,29 @@ subl .
 ```
 - Follow along in the next couple of sections to configure and deploy your own Reveal.js Gh-Pages presentation. 
 
+
+####View the presentation locally (Serve the files)
+
+![](images/turtlesStrappedToRockets.png)
+
+
+###HTTP Server
+<br>
+####Install 
+```
+#Install NPM
+curl https://npmjs.org/install.sh | sh
+#If you already have NPM
+npm install http-server -g
+```
+
+####Serve Content
+```
+http-server -p 8082
+```
+<br>
+ - [Documentation](https://www.npmjs.com/package/http-server)
+
 ---
 
 #Settings / Config
@@ -171,6 +194,7 @@ Note:The styles are just CSS files so you can modify or create your own.
 #![](images/Alex_and_Catelyn-CryatalMt-WA.png) #becomes
 <img src="images/Alex_and_Catelyn-CryatalMt-WA.png" height="600">
 ```
+- Example on the next slide
 Note:Occasionally you will have images that don't fit on the page with the default markdown image syntax.
 
 
@@ -183,6 +207,7 @@ Note:Occasionally you will have images that don't fit on the page with the defau
   src="http://www.youtube.com/embed/L0MK7qz13bU?autoplay=0&start=65"
   frameborder="0"/>
 ```
+- Example on the next slide
 
 
 <iframe id="ytplayer" type="text/html" width="640" height="390"
@@ -195,6 +220,7 @@ Note:Occasionally you will have images that don't fit on the page with the defau
 <iframe src="http://giphy.com/embed/vBVCam8nE7uxy?hideSocial=true" width="680" height="567" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
 <!-- GetTheBabby-vBVCam8nE7uxy -->
 ```
+- Example on the next slide
 
 
 <iframe src="http://giphy.com/embed/vBVCam8nE7uxy?hideSocial=true" width="680" height="567" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
@@ -227,6 +253,11 @@ git commit -a
 git push origin gh-pages
 ```
 - View your deployed site: `<username>.github.io/<project name>`
+
+
+###Success!!!
+<iframe src="http://giphy.com/embed/PzOm3LPWu7fJS?hideSocial=true" width="680" height="567" frameborder="0" class="giphy-embed" allowfullscreen=""></iframe>
+<!-- victory-reaction-jennifer-lawrence-PzOm3LPWu7fJS -->
 
 
 ###Add new remote repository using the Github API
