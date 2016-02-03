@@ -230,7 +230,8 @@ git push origin gh-pages
 
 
 ###Add new remote repository using the Github API
-- Details to be added at a later point and can replace the screen shot based approach.
+- Details to be added at a later point
+  - This can replace the screen shot based approach
 
 ---
 
