@@ -1,10 +1,51 @@
 ##Reveal Markdown / GH-Pages
 Makes creating presentations feel, more like programming.  Uses Github-pages to share presentation content and provides proper version control.
-  - Make changes by modifying the markdown file presentation.md
-  - Changes pushed to the Github in a branch named gh-pages will build as a static site
 
-###GH Pages
-- GH Pages URL structure: ```<username>.github.io/<project name>```
+-----------
+
+###Quick start
+```
+git clone https://github.com/aln787/revealGhPages.git
+cd revealGhPages
+git remote rm origin
+subl index.html
+```
+
+```
+<head>
+        <meta charset="utf-8">
+        <title>`Your presentation Title`</title>
+        <meta name="description" content="`your presentation description`" />
+```
+- Modify `index.html` to include the title of your presentation
+- Add a new repository to Github.com
+- Add the repositproy to your presentation and deploy
+
+```
+git remote add origin <your new repository>
+git status
+git commit -a
+git push origin gh-pages
+```
+- View your deployed presentation: 
+
+```
+<your github username>.github.io/<your new repo name>
+```
+
+- Open `presentation.md` and update the contents of the presentation
+- Commit changes and redeploy
+
+```
+git commit -a
+git push origin gh-pages
+```
+
+- View updates to your deployed presentation: 
+
+```
+<your github username>.github.io/<your new repo name>
+```
 
 ----------
 
