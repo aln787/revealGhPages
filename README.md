@@ -46,6 +46,45 @@ git push origin gh-pages
 ```
 <your github username>.github.io/<your new repo name>
 ```
+## Many presentations in one directory
+
+If you have a file in the same directory as your index.html file you can load that file as
+a presentation without changing the html file  by adding a html query string to the url.
+
+```
+<your github username>.github.io/<your new repo name>?md=<your md file name>
+```
+
+this way you can have many pressentations with only one index.html file.
+
+----------
+
+## YAML front matter
+
+You can set markdown options and revealOptions specific to your pressentation in 
+the .md file with YAML front matter header Jekyll style.
+
+```
+---
+title: Foobar
+separator: <!--s-->
+verticalSeparator: <!--v-->
+theme: css/theme/solarized.css
+revealOptions:
+    transition: 'fade'
+---
+Foo
+
+Note: test note
+
+<!--s-->
+
+# Bar
+
+<!--v-->
+´´´
+
+these will override the options set in the index.html
 
 ----------
 

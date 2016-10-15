@@ -221,14 +221,16 @@
 					if( xhr.readyState === 4 ) {
 						// file protocol yields status code 0 (useful for local debug, mobile applications etc.)
 						if ( ( xhr.status >= 200 && xhr.status < 300 ) || xhr.status === 0 ) {
-
-							section.outerHTML = slidify( xhr.responseText, {
-								separator: section.getAttribute( 'data-separator' ),
-								verticalSeparator: section.getAttribute( 'data-separator-vertical' ),
-								notesSeparator: section.getAttribute( 'data-separator-notes' ),
-								attributes: getForwardedAttributes( section )
-							});
-
+							let mdFile = jsyaml.loadFront(xhr.responseText);
+							let options = sectionOptions(section);
+							let prop
+							for(prop in options){
+								if(mdFile.hasOwnProperty(prop)){
+									options[prop] = mdFile[prop];
+								}
+							}
+							section.outerHTML = slidify(mdFile.__content , options);
+							setRevealOptions(mdFile);
 						}
 						else {
 
@@ -267,6 +269,33 @@
 			}
 		}
 
+	}
+
+	function sectionOptions(section){
+		return {
+			separator: section.getAttribute( 'data-separator' ),
+			verticalSeparator: section.getAttribute( 'data-separator-vertical' ),
+			notesSeparator: section.getAttribute( 'data-separator-notes' ),
+			attributes: getForwardedAttributes( section )
+	   }
+	}
+
+	function setRevealOptions(mdFile){
+		if (mdFile.title){
+			document.title = mdFile.title;
+		}
+
+		if(mdFile.theme){
+			document.getElementById("theme").setAttribute("href",mdFile.theme);
+		}
+
+		if(mdFile.revealOptions){
+			try{
+				Reveal.configure(mdFile.revealOptions);
+			}catch(e){}
+			
+			//setTimeout(function(){Reveal.configure(mdFile.revealOptions);},500);
+		}
 	}
 
 	/**
