@@ -54,8 +54,11 @@ a presentation without changing the html file  by adding a html query string to 
 ```
 <your github username>.github.io/<your new repo name>?md=<your md file name>
 ```
+
 this way you can have many pressentations with only one index.html file.
+
 ----------
+
 ## YAML front matter
 
 You can set markdown options and revealOptions specific to your pressentation in 
